@@ -1,0 +1,101 @@
+body {
+    background-color: #080808;
+    color: #FFFFFF;
+    font-family: 'Satoshi', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    cursor: url('cursor.png'), auto;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/ssjgod.gif');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.main-container {
+    width: 638px;
+    height: 321px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name {
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 39.5px;
+    text-align: center;
+    margin: 20px;
+}
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, rgba(0, 183, 255, 0) 70%);
+    border-radius: 50%;
+    animation: sparkle 1.5s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.avatar-wrapper img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-link {
+    color: #FFFFFF;
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+.social-link svg {
+    width: 2em;
+    height: 2em;
+    filter: drop-shadow(0 0 5px #FFFFFF);
+}

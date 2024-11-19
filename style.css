@@ -1,0 +1,94 @@
+body {
+    background-image: url('img/casakame.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.navbar-transparent {
+    background-color: transparent !important;
+    border: none; 
+}
+
+.navbar-brand img {
+    max-height: 55px; 
+    border-right: 10px;
+}
+
+.navbar, .navbar-brand, .nav-link {
+    font-family: 'Bold 700', sans-serif;
+    font-weight: bold; /* Muy gruesa */
+}
+
+.footer {
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    text-align: center; 
+    padding: 10px 10px;
+    font-size: 14px;
+    color: #ffffff; 
+    backdrop-filter: blur(5px); /* Efecto de desenfoque (opcional) */
+}
+
+.custom-title {
+    font-size: 72px; /* Tamaño de letra */
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left; /* Alineación a la izquierda */
+    margin-left: 150px; /* Ajusta este valor para centrarlo mejor */
+    margin-top: 230px; /* Espaciado desde la parte superior */
+    animation: glow 1.5s infinite alternate;
+    text-shadow: 0 0 5px #fff, 0 0 10px #000000, 0 0 15px #000000, 0 0 20px #000000, 0 0 25px #000000, 0 0 30px #000000, 0 0 35px #000000;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #000000, 0 0 15px #000000, 0 0 20px #000000, 0 0 25px #000000, 0 0 30px #000000, 0 0 35px #000000;
+        opacity: 1;
+    }
+    100% {
+        text-shadow: 0 0 2px #fff, 0 0 4px #000000, 0 0 6px #000000, 0 0 8px #000000, 0 0 10px #000000, 0 0 12px #000000, 0 0 14px #000000;
+        opacity: 0.7;
+    }
+}
+
+.quickscan-title {
+    font-size: 20px; /* Aumenta el tamaño de la letra */
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left; /* Alineación a la izquierda */
+    margin-left: 150px; /* Ajusta este valor para centrarlo mejor */
+    margin-top: 50px; /* Espaciado desde la parte superior */
+    animation: glow 1.5s infinite alternate;
+    text-shadow: 0 0 5px #fff, 0 0 10px #000000, 0 0 15px #000000, 0 0 20px #000000, 0 0 25px #000000, 0 0 30px #000000, 0 0 35px #000000;
+    width: 80%; /* Ajusta el ancho del párrafo para que se divida en varias líneas */
+    word-wrap: break-word; /* Asegura que el texto se ajuste y no se salga del contenedor */
+    line-height: 1.5; /* Espaciado entre líneas para hacer el texto más legible */
+    max-width: 900px; /* Limita el ancho para evitar que se estire demasiado */
+}
+
+.btn-outline-secondary {
+    font-size: 30px; /* Aumenta el tamaño del texto en el botón */
+    padding: 15px 30px; /* Aumenta el tamaño del botón */
+    width: 300px; /* Asegura que el botón ocupe toda la línea */
+    margin-top: 30px; /* Espacio entre el texto y el botón */
+    margin-left: 150px; /* Alineación del botón */
+    border-width: 3px; /* Aumenta el grosor del borde */
+    color: #000000; /* Cambia el texto del botón a negro */
+    border-color: #000000; /* Cambia el color del borde a negro */
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #000000, 0 0 15px #000000, 0 0 20px #000000, 0 0 25px #000000, 0 0 30px #000000, 0 0 35px #000000;
+        opacity: 1;
+    }
+    100% {
+        text-shadow: 0 0 2px #fff, 0 0 4px #000000, 0 0 6px #000000, 0 0 8px #000000, 0 0 10px #000000, 0 0 12px #000000, 0 0 14px #000000;
+        opacity: 0.7;
+    }
+}
