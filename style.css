@@ -92,3 +92,21 @@ body {
         opacity: 0.7;
     }
 }
+.action .action-1 {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s linear;
+  }
+  
+  .action .action-1:hover {
+    background-color: #fff;
+    color: #000;
+    transition: 0.2s linear;
+    
+  }
