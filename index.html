@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<title>Matias Moya — Portafolio</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Matias Moya — Estudiante de Ingenieria en Duoc UC"/>
+<link rel="icon" type="icon" href="https://static.wikia.nocookie.net/logopedia/images/2/2e/Fortnite_Chapter_2_Season_2.svg/revision/latest/scale-to-width-down/250?cb=20210330161744"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ─── TOKENS ─── */
+:root{
+  --y:#FFD600;
+  --y2:#FFE033;
+  --bg:#0D0D0D;
+  --bg2:#141414;
+  --bg3:#1C1C1C;
+  --ink:#F0F0F0;
+  --ink2:#888;
+  --border:#2A2A2A;
+  --max:1200px;
+}
+[data-theme="light"]{
+  --y:#C49900;
+  --y2:#F0BC00;
+  --bg:#F5F5F0;
+  --bg2:#EEEEE8;
+  --bg3:#E4E4DC;
+  --ink:#111111;
+  --ink2:#666;
+  --border:#D0D0C8;
+}
+
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  transition:background .3s,color .3s;
+}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--y);border-radius:2px}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:56px;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+  transition:background .3s,border-color .3s;
+}
+.nav-logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;letter-spacing:.08em;
+  color:var(--y);
+}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--y)}
+.nav-end{display:flex;gap:10px;align-items:center}
+.nav-icon{
+  width:30px;height:30px;border:1px solid var(--border);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;color:var(--ink2);
+  cursor:pointer;background:transparent;transition:border-color .15s,color .15s;
+}
+.nav-icon:hover{border-color:var(--y);color:var(--y)}
+
+/* ─── SECTIONS ─── */
+.panel{
+  min-height:100vh;
+  scroll-snap-align:start;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 48px 48px;
+  position:relative;overflow:hidden;
+}
+.panel-inner{max-width:var(--max);margin:0 auto;width:100%}
+
+/* ─── HERO ─── */
+#hero{background:var(--bg);border-bottom:1px solid var(--border)}
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink2);margin-bottom:20px;
+}
+.hero-label-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:blink 2s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-headline{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(72px,13vw,180px);
+  line-height:.9;letter-spacing:.01em;
+  color:var(--ink);
+}
+.hero-headline span{color:var(--y)}
+.hero-sub-row{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-top:40px;gap:32px;flex-wrap:wrap;
+  border-top:1px solid var(--border);padding-top:28px;
+}
+.hero-desc{
+  font-size:15px;line-height:1.75;color:var(--ink2);
+  max-width:460px;
+}
+.hero-desc strong{color:var(--ink);font-weight:700}
+.hero-ctas{display:flex;gap:10px;flex-shrink:0}
+.btn-y{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--y);color:#111;
+  border:2px solid var(--y);
+  padding:12px 22px;border-radius:0;
+  font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;transition:all .18s;
+}
+.btn-y:hover{background:transparent;color:var(--y)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:7px;
+  background:transparent;color:var(--ink);
+  border:2px solid var(--border);
+  padding:12px 22px;border-radius:0;
+  font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;transition:all .18s;
+}
+.btn-outline:hover{border-color:var(--y);color:var(--y)}
+.hero-photo-area{
+  position:absolute;right:0;top:56px;bottom:0;
+  width:clamp(240px,30vw,400px);
+  overflow:hidden;
+  background:var(--bg2);
+  border-left:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+}
+/* Si pones tu foto, reemplaza el placeholder: */
+.hero-photo-placeholder{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(60px,8vw,120px);
+  color:var(--y);opacity:.15;letter-spacing:.05em;
+  user-select:none;
+}
+/* Cuando tengas foto: */
+.hero-photo-area img{width:100%;height:100%;object-fit:cover;object-position:top}
+
+/* ─── TICKER ─── */
+.ticker-bar{
+  background:var(--y);overflow:hidden;
+  padding:10px 0;white-space:nowrap;
+  border-top:none;border-bottom:1px solid var(--border);
+}
+.ticker-track{
+  display:inline-flex;gap:0;
+  animation:ticker 18s linear infinite;
+}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:16px;letter-spacing:.12em;color:#111;
+  padding:0 32px;
+}
+.ticker-sep{color:rgba(0,0,0,.3)}
+
+/* ─── SOBRE ─── */
+#sobre{background:var(--bg2)}
+.sobre-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.sobre-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(120px,18vw,240px);
+  line-height:.85;color:var(--y);opacity:.07;
+  position:absolute;right:-20px;top:50%;transform:translateY(-50%);
+  pointer-events:none;user-select:none;letter-spacing:-.02em;
+}
+.sobre-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--y);margin-bottom:20px;
+}
+.sobre-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,7vw,96px);
+  line-height:.95;letter-spacing:.01em;color:var(--ink);
+  margin-bottom:32px;
+}
+.sobre-title em{color:var(--y);font-style:normal}
+.sobre-body p{font-size:15px;line-height:1.82;color:var(--ink2);margin-bottom:16px}
+.sobre-body p:last-child{margin-bottom:0}
+.sobre-body strong{color:var(--ink);font-weight:700}
+.sobre-features{display:flex;flex-direction:column;gap:0}
+.feat{
+  display:flex;gap:20px;align-items:flex-start;
+  padding:20px 0;border-bottom:1px solid var(--border);
+  transition:background .2s;
+}
+.feat:first-child{border-top:1px solid var(--border)}
+.feat:hover .feat-num{color:var(--y)}
+.feat-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:36px;color:var(--border);
+  line-height:1;flex-shrink:0;width:52px;
+  transition:color .25s;
+}
+.feat-body h4{font-size:13px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.feat-body p{font-size:13px;color:var(--ink2);line-height:1.55}
+
+/* ─── STACK ─── */
+#stack{background:var(--bg)}
+.stack-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--y);margin-bottom:24px;
+}
+.stack-headline{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(60px,9vw,120px);
+  line-height:.9;color:var(--ink);
+  margin-bottom:56px;
+}
+.stack-rows{display:flex;flex-direction:column;gap:0}
+.stack-row{
+  display:flex;align-items:center;
+  border-bottom:1px solid var(--border);
+  padding:24px 0;gap:24px;
+  transition:background .15s;cursor:default;
+}
+.stack-row:first-child{border-top:1px solid var(--border)}
+.stack-row:hover{background:var(--bg2);padding-left:12px;padding-right:12px;margin:0 -12px;border-radius:0}
+.stack-row:hover .stack-row-arrow{color:var(--y);transform:translateX(4px)}
+.stack-row-cat{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:14px;letter-spacing:.12em;color:var(--ink2);
+  width:160px;flex-shrink:0;
+}
+.stack-tags{display:flex;flex-wrap:wrap;gap:8px;flex:1}
+.tag{
+  padding:5px 12px;
+  border:1px solid var(--border);
+  font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--ink2);border-radius:0;transition:all .15s;
+}
+.tag.hi{border-color:var(--y);color:var(--y);background:rgba(255,214,0,.04)}
+.stack-row-arrow{
+  color:var(--border);font-size:20px;flex-shrink:0;
+  transition:color .2s,transform .2s;
+}
+
+/* ─── CONTACTO ─── */
+#contacto{background:var(--bg2)}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-headline{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(56px,9vw,120px);
+  line-height:.9;letter-spacing:.01em;
+  margin-bottom:28px;
+}
+.contact-headline em{color:var(--y);font-style:normal}
+.contact-sub{font-size:15px;line-height:1.75;color:var(--ink2);margin-bottom:40px;max-width:420px}
+.contact-links{display:flex;flex-direction:column;gap:0}
+.clink{
+  display:flex;align-items:center;gap:14px;
+  padding:18px 0;border-bottom:1px solid var(--border);
+  color:var(--ink2);font-size:13.5px;font-weight:500;
+  transition:color .2s;
+}
+.clink:first-child{border-top:1px solid var(--border)}
+.clink:hover{color:var(--y)}
+.clink:hover .clink-arrow{transform:translateX(5px)}
+.clink-icon{
+  width:36px;height:36px;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--y);flex-shrink:0;transition:border-color .2s;
+}
+.clink:hover .clink-icon{border-color:var(--y)}
+.clink-meta{flex:1}
+.clink-lbl{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin-bottom:1px}
+.clink-val{font-size:14px;font-weight:700;color:var(--ink)}
+.clink-arrow{font-size:18px;flex-shrink:0;transition:transform .2s}
+
+/* ─── FORM ─── */
+.cform{display:flex;flex-direction:column;gap:14px}
+.fgroup{display:flex;flex-direction:column;gap:5px}
+.flbl{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.finput,.ftarea{
+  background:var(--bg3);border:1px solid var(--border);
+  padding:11px 14px;font-size:13.5px;font-family:inherit;color:var(--ink);
+  outline:none;width:100%;transition:border-color .2s;border-radius:0;resize:none;
+}
+[data-theme="light"] .finput,[data-theme="light"] .ftarea{background:#fff}
+.finput::placeholder,.ftarea::placeholder{color:var(--ink2)}
+.finput:focus,.ftarea:focus{border-color:var(--y)}
+.ftarea{height:110px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fsubmit{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:14px;
+  background:var(--y);color:#111;border:2px solid var(--y);
+  font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;
+  font-family:inherit;cursor:pointer;border-radius:0;
+  transition:all .2s;
+}
+.fsubmit:hover{background:transparent;color:var(--y)}
+.fsubmit:disabled{opacity:.5;cursor:not-allowed}
+[data-theme="light"] .fsubmit:hover{color:var(--y)}
+.ffeedback{display:none;gap:8px;align-items:center;padding:10px 13px;font-size:13px;font-weight:600}
+.ffeedback.ok{display:flex;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d}
+.ffeedback.err{display:flex;background:#fff1f2;border:1px solid #fecdd3;color:#be123c}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--bg);border-top:1px solid var(--border);
+  padding:22px 48px;display:flex;align-items:center;justify-content:space-between;
+  font-size:11.5px;color:var(--ink2);
+}
+footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.08em}
+
+/* ─── UP BTN ─── */
+#up{
+  position:fixed;bottom:28px;right:28px;
+  width:42px;height:42px;background:var(--y);color:#111;
+  border:none;cursor:pointer;font-size:18px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;
+  border-radius:0;
+}
+#up.show{opacity:1;pointer-events:auto}
+#up:hover{transform:translateY(-3px)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .panel{padding:80px 24px 40px}
+  .hero-photo-area{display:none}
+  .hero-headline{font-size:clamp(64px,18vw,120px)}
+  .hero-sub-row{flex-direction:column;align-items:flex-start}
+  .sobre-grid{grid-template-columns:1fr;gap:40px}
+  .contact-layout{grid-template-columns:1fr;gap:40px}
+  .frow{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:4px;text-align:center;padding:18px 24px}
+  .stack-row-cat{width:100px;font-size:12px}
+}
+@media(max-width:480px){
+  .hero-headline{font-size:clamp(52px,20vw,90px)}
+  .stack-row{flex-wrap:wrap}
+  .stack-row-cat{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .ticker-track{animation:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo"></a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Perfil</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <div class="nav-end">
+    <a href="https://www.linkedin.com/in/matias-moya-vargas-b2525726a/" target="_blank" class="nav-icon" aria-label="LinkedIn">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/twistyasap" target="_blank" class="nav-icon" aria-label="GitHub">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.253-.447-1.27.098-2.646 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.376.202 2.393.1 2.646.64.698 1.028 1.591 1.028 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+    </a>
+    <button class="nav-icon" id="theme-toggle" aria-label="Cambiar tema">
+      <svg class="icon-moon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="panel" id="hero">
+  <div class="hero-photo-area" aria-hidden="true">
+    
+      
+      <img src="yojejesiu.png" alt="Foto de Matias Moya" />
+    
+  </div>
+  <div class="panel-inner" style="padding-right:clamp(0px,32vw,440px)">
+    <div class="hero-label">
+      <span class="hero-label-dot"></span>
+      Disponible para prácticas y proyectos
+    </div>
+    <h1 class="hero-headline">
+      MATIAS<br/><span>MOYA</span>
+    </h1>
+    <div class="hero-sub-row">
+      <p class="hero-desc">
+        Estudiante de <strong>Ingenieria</strong> en <strong>Duoc UC</strong>.<br>
+        Construyo con datos, código y ganas.<br>
+        Santiago, Chile.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn-y">
+          Contacto
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#stack" class="btn-outline">Stack</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TICKER ─── -->
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Python</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Pandas</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Scikit-learn</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">JavaScript</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Node.js</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Firebase</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Django</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">HTML</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">CSS</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">CRISP-DM</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Power BI</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Machine Learning</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Python</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Pandas</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Scikit-learn</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">JavaScript</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Node.js</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Firebase</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Django</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">HTML</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">CSS</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">CRISP-DM</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Power BI</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Machine Learning</span><span class="ticker-item ticker-sep">·</span>
+  </div>
+</div>
+
+<!-- ─── SOBRE ─── -->
+<section class="panel" id="sobre">
+  <div class="panel-inner" style="position:relative">
+    <div class="sobre-num" aria-hidden="true">01</div>
+    <div class="sobre-grid">
+      <div>
+        <div class="sobre-eyebrow">Perfil</div>
+        <h2 class="sobre-title">MÁS<br>QUE<br><em>CÓDIGO</em></h2>
+        <div class="sobre-body">
+          <p>Soy <strong>Matias Moya</strong>, estudiante de Cooking Drugs en <strong>ArandaINS</strong>, Santiago. Me mueve transformar datos en decisiones y construir cosas que sirvan de verdad.</p>
+          <p>Trabajo con <strong>Python, Pandas y Scikit-learn</strong> para análisis y modelos ML, y con <strong>HTML, CSS, JavaScript, Node.js y Django</strong> para web. Firebase completa mi stack.</p>
+          <p>Me interesa el lado técnico tanto como el resultado: código que resuelve un problema real, no solo uno que funciona en el lab.</p>
+        </div>
+      </div>
+      <div class="sobre-features">
+        <div class="feat">
+          <div class="feat-num">01</div>
+          <div class="feat-body">
+            <h4>Datos & ML</h4>
+            <p>Modelos de clasificación, regresión y clustering aplicando metodología CRISP-DM. Visualización con Power BI.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-num">02</div>
+          <div class="feat-body">
+            <h4>Desarrollo Web</h4>
+            <p>Frontend con HTML, CSS y JS. Backend con Node.js, Firebase y Django. Desde la interfaz hasta la base de datos.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-num">03</div>
+          <div class="feat-body">
+            <h4>Metodología</h4>
+            <p>Proyectos estructurados con CRISP-DM, gestión de riesgos y trabajo colaborativo con metodologías ágiles.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-num">04</div>
+          <div class="feat-body">
+            <h4>Visión de producto</h4>
+            <p>Pienso en el usuario final, no solo en el modelo. El objetivo es que el resultado sea útil, no solo técnicamente correcto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STACK ─── -->
+<section class="panel" id="stack">
+  <div class="panel-inner" style="position:relative">
+    <div class="sobre-num" aria-hidden="true" style="opacity:.05">02</div>
+    <div class="stack-eyebrow">Tecnologías</div>
+    <h2 class="stack-headline">CON QUÉ<br><span style="color:var(--y)">TRABAJO.</span></h2>
+    <div class="stack-rows">
+      <div class="stack-row">
+        <div class="stack-row-cat">Frontend</div>
+        <div class="stack-tags">
+          <span class="tag hi">HTML</span>
+          <span class="tag hi">CSS</span>
+          <span class="tag hi">JavaScript</span>
+          <span class="tag hi">React</span>
+        </div>
+        <div class="stack-row-arrow">→</div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-row-cat">Backend & BD</div>
+        <div class="stack-tags">
+          <span class="tag hi">Node.js</span>
+          <span class="tag hi">Firebase</span>
+          <span class="tag hi">Django</span>
+        </div>
+        <div class="stack-row-arrow">→</div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-row-cat">Data & ML</div>
+        <div class="stack-tags">
+          <span class="tag hi">Python</span>
+          <span class="tag hi">Pandas</span>
+          <span class="tag hi">Scikit-learn</span>
+        </div>
+        <div class="stack-row-arrow">→</div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-row-cat">Herramientas</div>
+        <div class="stack-tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">Git</span>
+          <span class="tag">CRISP-DM</span>
+          <span class="tag">Jupyter</span>
+        </div>
+        <div class="stack-row-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACTO ─── -->
+<section class="panel" id="contacto">
+  <div class="panel-inner" style="position:relative">
+    <div class="sobre-num" aria-hidden="true" style="opacity:.05">03</div>
+    <div class="contact-layout">
+      <div>
+        <div class="sobre-eyebrow">Contacto</div>
+        <h2 class="contact-headline">HABLA<br><em>CONMIGO.</em></h2>
+        <p class="contact-sub">
+          Abierto a prácticas, colaboraciones y proyectos. Si algo de lo que ves encaja, escríbeme directo.
+        </p>
+        <div class="contact-links">
+          <a href="https://wa.me/56951524830?text=Hola%20Matias,%20te%20contacto%20desde%20tu%20portafolio" target="_blank" class="clink">
+            <div class="clink-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.107 1.523 5.832L.079 23.07a.5.5 0 0 0 .611.636l5.385-1.406A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22A10 10 0 0 1 6.354 20.39l-.387-.231-4.007 1.046 1.07-3.91-.251-.4A10 10 0 1 1 12 22z"/></svg>
+            </div>
+            <div class="clink-meta">
+              <div class="clink-lbl">WhatsApp</div>
+            <div class="clink-val">Contactame</div>
+              
+            </div>
+            <div class="clink-arrow">→</div>
+          </a>
+          <!-- CV como PDF adjunto por WhatsApp -->
+          <a href="https://wa.me/56951524830?text=Hola%20Matias,%20me%20interesa%20tu%20perfil.%20%C2%BFPodr%C3%ADas%20enviarme%20tu%20CV?" target="_blank" class="clink">
+            <div class="clink-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+            </div>
+            <div class="clink-meta">
+              <div class="clink-lbl">Curriculum Vitae</div>
+              <div class="clink-val">CV</div>
+            </div>
+            <div class="clink-arrow">→</div>
+          </a>
+          <a href="https://github.com/twistyasap" target="_blank" class="clink">
+            <div class="clink-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div class="clink-meta">
+              <div class="clink-lbl">LinkedIn</div>
+              <div class="clink-val">Matias Moya</div>
+            </div>
+            <div class="clink-arrow">→</div>
+          </a>
+          <a href="https://github.com/twistyasap" target="_blank" class="clink">
+            <div class="clink-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.253-.447-1.27.098-2.646 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.376.202 2.393.1 2.646.64.698 1.028 1.591 1.028 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </div>
+            <div class="clink-meta">
+              <div class="clink-lbl">GitHub</div>
+              <div class="clink-val">twistyasap</div>
+            </div>
+            <div class="clink-arrow">→</div>
+          </a>
+        </div>
+      </div>
+      <div>
+        <form class="cform" id="cform" action="https://formspree.io/f/TU-FORM-ID" method="POST" novalidate>
+          <div class="frow">
+            <div class="fgroup">
+              <label class="flbl" for="fn">Nombre</label>
+              <input class="finput" type="text" id="fn" name="name" placeholder="Tu nombre" required/>
+            </div>
+            <div class="fgroup">
+              <label class="flbl" for="fwsp">WhatsApp</label>
+              <input class="finput" type="text" id="fwsp" name="whatsapp" placeholder="+56 9 XXXX XXXX"/>
+            </div>
+          </div>
+          <div class="fgroup">
+            <label class="flbl" for="fasunto">Asunto</label>
+            <input class="finput" type="text" id="fasunto" name="subject" placeholder="Práctica / Proyecto / Consulta"/>
+          </div>
+          <div class="fgroup">
+            <label class="flbl" for="fmsg">Mensaje</label>
+            <textarea class="ftarea" id="fmsg" name="message" placeholder="Cuéntame de qué se trata..." required></textarea>
+          </div>
+          <div id="ffb" class="ffeedback"></div>
+          <button type="submit" class="fsubmit" id="fbtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>MATIAS MOYA</strong>
+  <span>© <span id="yr"></span> · Santiago, Chile · AIEP</span>
+</footer>
+
+<button id="up" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Theme
+const html = document.documentElement;
+const saved = localStorage.getItem('mm-theme2');
+if(saved) html.setAttribute('data-theme', saved);
+function applyThemeIcons(){
+  const dark = html.getAttribute('data-theme')==='dark';
+  document.querySelector('.icon-moon').style.display = dark?'block':'none';
+  document.querySelector('.icon-sun').style.display  = dark?'none':'block';
+}
+applyThemeIcons();
+document.getElementById('theme-toggle').addEventListener('click', ()=>{
+  const next = html.getAttribute('data-theme')==='dark'?'light':'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('mm-theme2', next);
+  applyThemeIcons();
+});
+
+// GSAP
+gsap.registerPlugin(ScrollTrigger);
+const ease = 'power3.out';
+
+// Hero
+gsap.from('.hero-label',    {y:20,autoAlpha:0,duration:.6,ease,delay:.1});
+gsap.from('.hero-headline', {y:60,autoAlpha:0,duration:.9,ease,delay:.2});
+gsap.from('.hero-sub-row',  {y:30,autoAlpha:0,duration:.7,ease,delay:.5});
+
+// Scroll reveals
+function rev(sel, opts={}){
+  gsap.utils.toArray(sel).forEach((el,i)=>{
+    gsap.fromTo(el,
+      {autoAlpha:0,y:opts.y??30,x:opts.x??0},
+      {scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'},
+       autoAlpha:1,y:0,x:0,
+       duration:opts.dur??0.65,
+       delay:(opts.stag??0.08)*i,
+       ease,clearProps:'transform'}
+    );
+  });
+}
+
+rev('.sobre-eyebrow,.sobre-title',{y:40,stag:0.1});
+rev('.sobre-body p',{stag:0.1});
+rev('.feat',{x:-20,y:0,stag:0.1});
+rev('.stack-eyebrow,.stack-headline',{y:40,stag:0.1});
+rev('.stack-row',{x:-16,y:0,stag:0.08});
+rev('.sobre-eyebrow+*,.contact-headline,.contact-sub',{y:40,stag:0.1});
+rev('.clink',{x:-16,y:0,stag:0.09});
+rev('.cform',{y:30});
+
+// Nav active
+const navAs = document.querySelectorAll('.nav-links a');
+document.querySelectorAll('section[id]').forEach(sec=>{
+  ScrollTrigger.create({
+    trigger:sec, start:'top 50%', end:'bottom 50%',
+    onToggle:self=>{
+      if(self.isActive)
+        navAs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+sec.id));
+    }
+  });
+});
+
+// Up btn
+const up = document.getElementById('up');
+window.addEventListener('scroll',()=>up.classList.toggle('show',scrollY>500),{passive:true});
+
+/// Form — EmailJS
+emailjs.init('0277TApkwNr7f0AMh');
+
+const form = document.getElementById('cform');
+const btn  = document.getElementById('fbtn');
+const fb   = document.getElementById('ffb');
+
+form.addEventListener('submit', async e=>{
+  e.preventDefault();
+  btn.disabled=true; btn.textContent='Enviando...';
+  fb.className='ffeedback';
+  try{
+    await emailjs.send('service_3zmax82', 'template_vqgcofc', {
+      nombre:   document.getElementById('fn').value.trim(),
+      whatsapp: document.getElementById('fwsp').value.trim(),
+      asunto:   document.getElementById('fasunto').value.trim(),
+      mensaje:  document.getElementById('fmsg').value.trim(),
+    });
+    fb.className='ffeedback ok';
+    fb.textContent='✓ Mensaje enviado. Te respondo pronto.';
+    form.reset();
+    btn.textContent='✓ Enviado';
+  } catch {
+    fb.className='ffeedback err';
+    fb.textContent='✗ Error al enviar. Escríbeme directo por WhatsApp.';
+    btn.disabled=false;
+    btn.textContent='Enviar mensaje';
+  }
+});
+</script>
+</body>
+</html>
