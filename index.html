@@ -157,7 +157,7 @@ nav{
 }
 .ticker-track{
   display:inline-flex;gap:0;
-  animation:ticker 18s linear infinite;
+  animation:ticker 22s linear infinite;
 }
 .ticker-track:hover{animation-play-state:paused}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -212,8 +212,34 @@ nav{
 .feat-body h4{font-size:13px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
 .feat-body p{font-size:13px;color:var(--ink2);line-height:1.55}
 
+/* ─── PROYECTOS ─── */
+#proyectos{background:var(--bg)}
+.proy-grid{display:flex;flex-direction:column;gap:0}
+.proy-card{
+  border-bottom:1px solid var(--border);
+  padding:32px 0;
+  display:grid;grid-template-columns:220px 1fr;gap:32px;
+}
+.proy-card:first-child{border-top:1px solid var(--border)}
+.proy-tag-top{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:11px;letter-spacing:.14em;color:var(--y);
+  text-transform:uppercase;margin-bottom:10px;
+}
+.proy-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(26px,3vw,34px);
+  line-height:1.02;color:var(--ink);
+}
+.proy-body p{font-size:14px;line-height:1.7;color:var(--ink2);margin-bottom:10px}
+.proy-body p:last-child{margin-bottom:14px}
+.proy-tags{display:flex;flex-wrap:wrap;gap:8px}
+@media(max-width:760px){
+  .proy-card{grid-template-columns:1fr;gap:12px}
+}
+
 /* ─── STACK ─── */
-#stack{background:var(--bg)}
+#stack{background:var(--bg2)}
 .stack-eyebrow{
   font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
   color:var(--y);margin-bottom:24px;
@@ -232,7 +258,7 @@ nav{
   transition:background .15s;cursor:default;
 }
 .stack-row:first-child{border-top:1px solid var(--border)}
-.stack-row:hover{background:var(--bg2);padding-left:12px;padding-right:12px;margin:0 -12px;border-radius:0}
+.stack-row:hover{background:var(--bg3);padding-left:12px;padding-right:12px;margin:0 -12px;border-radius:0}
 .stack-row:hover .stack-row-arrow{color:var(--y);transform:translateX(4px)}
 .stack-row-cat{
   font-family:'Bebas Neue',sans-serif;
@@ -364,6 +390,7 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
   <a href="#hero" class="nav-logo"></a>
   <ul class="nav-links">
     <li><a href="#sobre">Perfil</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
@@ -384,10 +411,7 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
 <!-- ─── HERO ─── -->
 <section class="panel" id="hero">
   <div class="hero-photo-area" aria-hidden="true">
-    
-      
-      <img src="yo.png" alt="Foto de Matias Moya" />
-    
+    <img src="yo.png" alt="Foto de Matias Moya" />
   </div>
   <div class="panel-inner" style="padding-right:clamp(0px,32vw,440px)">
     <div class="hero-label">
@@ -399,7 +423,7 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
     </h1>
     <div class="hero-sub-row">
       <p class="hero-desc">
-        Estudiante de <strong>Ingenieria</strong> en <strong>Duoc UC</strong>.<br>
+        Estudiante de <strong>Ingeniería en Informática</strong> en <strong>DUOC UC</strong>, octavo semestre.<br>
         Construyo con datos, código y ganas.<br>
         Santiago, Chile.
       </p>
@@ -421,25 +445,41 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
     <span class="ticker-item">Pandas</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Scikit-learn</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">JavaScript</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">React</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Angular</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">TailwindCSS</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Node.js</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Spring Boot</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Firebase</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Django</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">PostgreSQL</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">HTML</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">CSS</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">BigQuery</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Cloud Storage</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">CRISP-DM</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Power BI</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Excel Avanzado</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Machine Learning</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Python</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Pandas</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Scikit-learn</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">JavaScript</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">React</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Angular</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">TailwindCSS</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Node.js</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Spring Boot</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Firebase</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Django</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">PostgreSQL</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">HTML</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">CSS</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">BigQuery</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Cloud Storage</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">CRISP-DM</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Power BI</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">Excel Avanzado</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Machine Learning</span><span class="ticker-item ticker-sep">·</span>
   </div>
 </div>
@@ -453,8 +493,8 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
         <div class="sobre-eyebrow">Perfil</div>
         <h2 class="sobre-title">MÁS<br>QUE<br><em>CÓDIGO</em></h2>
         <div class="sobre-body">
-          <p>Soy <strong>Matias Moya</strong>, estudiante de Cooking Drugs en <strong>ArandaINS</strong>, Santiago. Me mueve transformar datos en decisiones y construir cosas que sirvan de verdad.</p>
-          <p>Trabajo con <strong>Python, Pandas y Scikit-learn</strong> para análisis y modelos ML, y con <strong>HTML, CSS, JavaScript, Node.js y Django</strong> para web. Firebase completa mi stack.</p>
+          <p>Soy <strong>Matias Moya</strong>, estudiante de octavo semestre de Ingeniería en Informática en <strong>DUOC UC</strong>, Santiago. Me mueve transformar datos en decisiones y construir cosas que sirvan de verdad.</p>
+          <p>Trabajo con <strong>Python, Pandas y Scikit-learn</strong> para análisis y modelos de Machine Learning, y con <strong>React, Angular, Node.js, Spring Boot, Django y Firebase</strong> para desarrollo web. También manejo <strong>Google Cloud Platform (BigQuery, Cloud Storage)</strong> y Excel a nivel avanzado.</p>
           <p>Me interesa el lado técnico tanto como el resultado: código que resuelve un problema real, no solo uno que funciona en el lab.</p>
         </div>
       </div>
@@ -463,28 +503,28 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
           <div class="feat-num">01</div>
           <div class="feat-body">
             <h4>Datos & ML</h4>
-            <p>Modelos de clasificación, regresión y clustering aplicando metodología CRISP-DM. Visualización con Power BI.</p>
+            <p>Modelos de clasificación, regresión y clustering aplicando metodología CRISP-DM. Visualización con Power BI y consultas analíticas en BigQuery.</p>
           </div>
         </div>
         <div class="feat">
           <div class="feat-num">02</div>
           <div class="feat-body">
             <h4>Desarrollo Web</h4>
-            <p>Frontend con HTML, CSS y JS. Backend con Node.js, Firebase y Django. Desde la interfaz hasta la base de datos.</p>
+            <p>Frontend con React, Angular y TailwindCSS. Backend con Django, Node.js, Spring Boot y Firebase. Desde la interfaz hasta la base de datos.</p>
           </div>
         </div>
         <div class="feat">
           <div class="feat-num">03</div>
           <div class="feat-body">
-            <h4>Metodología</h4>
-            <p>Proyectos estructurados con CRISP-DM, gestión de riesgos y trabajo colaborativo con metodologías ágiles.</p>
+            <h4>Cloud & Datos</h4>
+            <p>Carga y consulta de datasets en Google Cloud Platform (BigQuery, Cloud Storage), y Excel avanzado (tablas dinámicas, macros, Power Query).</p>
           </div>
         </div>
         <div class="feat">
           <div class="feat-num">04</div>
           <div class="feat-body">
-            <h4>Visión de producto</h4>
-            <p>Pienso en el usuario final, no solo en el modelo. El objetivo es que el resultado sea útil, no solo técnicamente correcto.</p>
+            <h4>Metodología</h4>
+            <p>Proyectos estructurados con CRISP-DM, Scrum y principios REST, siempre pensando en el usuario final, no solo en el modelo.</p>
           </div>
         </div>
       </div>
@@ -492,10 +532,78 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
   </div>
 </section>
 
+<!-- ─── PROYECTOS ─── -->
+<section class="panel" id="proyectos">
+  <div class="panel-inner" style="position:relative">
+    <div class="sobre-num" aria-hidden="true" style="opacity:.05">02</div>
+    <div class="stack-eyebrow">Proyectos</div>
+    <h2 class="stack-headline">LO QUE<br><span style="color:var(--y)">HE CONSTRUIDO.</span></h2>
+    <div class="proy-grid">
+
+      <div class="proy-card">
+        <div>
+          <div class="proy-tag-top">Destacado</div>
+          <div class="proy-title">Sistema de Gestión<br>de Gimnasio</div>
+        </div>
+        <div class="proy-body">
+          <p>Dashboard administrativo para el control de mensualidades de socios: estado de pago (al día / con deuda), historial de pagos y tiempo de antigüedad en el gimnasio.</p>
+          <p>Backend en Django con PostgreSQL para el modelado de socios, planes y pagos, con vistas filtradas por estado de mensualidad. Frontend en React con TailwindCSS, y panel de indicadores con Chart.js: socios activos, morosidad mensual y retención por antigüedad.</p>
+          <div class="proy-tags">
+            <span class="tag hi">Python</span><span class="tag hi">Django</span><span class="tag hi">PostgreSQL</span><span class="tag hi">React</span><span class="tag hi">TailwindCSS</span><span class="tag hi">Chart.js</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proy-card">
+        <div>
+          <div class="proy-tag-top">Académico</div>
+          <div class="proy-title">Fortnite: Análisis<br>de Abandono</div>
+        </div>
+        <div class="proy-body">
+          <p>Proyecto de análisis, minería y ciencia de datos, hecho en equipo, para entender por qué los jugadores dejan de jugar, siguiendo la metodología CRISP-DM sobre un dataset real.</p>
+          <p>Apliqué tres modelos (regresión lineal, clasificación y K-Means) y armé un dashboard en Power BI. Además construí un dashboard web aparte con HTML, CSS, JavaScript y Chart.js, con una pestaña donde se puede probar el modelo predictivo.</p>
+          <div class="proy-tags">
+            <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">Power BI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proy-card">
+        <div>
+          <div class="proy-tag-top">Académico</div>
+          <div class="proy-title">Análisis de Datos<br>en la Nube (GCP)</div>
+        </div>
+        <div class="proy-body">
+          <p>Carga y almacenamiento de datasets en Cloud Storage y consultas analíticas en BigQuery sobre grandes volúmenes de datos.</p>
+          <p>Escritura de consultas SQL para limpieza, agregación y exploración de datos como respaldo de proyectos de análisis.</p>
+          <div class="proy-tags">
+            <span class="tag">BigQuery</span><span class="tag">Cloud Storage</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proy-card">
+        <div>
+          <div class="proy-tag-top">Proyecto de título</div>
+          <div class="proy-title">Foro Prevención<br>Cáncer de Mama</div>
+        </div>
+        <div class="proy-body">
+          <p>En desarrollo. Es un foro donde los usuarios pueden compartir e informarse sobre prevención de cáncer de mama.</p>
+          <p>Backend en Django, trabajando con entorno virtual de Python. Repositorio propio en GitHub.</p>
+          <div class="proy-tags">
+            <span class="tag">Python</span><span class="tag">Django</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ─── STACK ─── -->
 <section class="panel" id="stack">
   <div class="panel-inner" style="position:relative">
-    <div class="sobre-num" aria-hidden="true" style="opacity:.05">02</div>
+    <div class="sobre-num" aria-hidden="true" style="opacity:.05">03</div>
     <div class="stack-eyebrow">Tecnologías</div>
     <h2 class="stack-headline">CON QUÉ<br><span style="color:var(--y)">TRABAJO.</span></h2>
     <div class="stack-rows">
@@ -506,15 +614,23 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
           <span class="tag hi">CSS</span>
           <span class="tag hi">JavaScript</span>
           <span class="tag hi">React</span>
+          <span class="tag hi">Angular</span>
+          <span class="tag hi">TailwindCSS</span>
+          <span class="tag hi">Vite</span>
         </div>
         <div class="stack-row-arrow">→</div>
       </div>
       <div class="stack-row">
         <div class="stack-row-cat">Backend & BD</div>
         <div class="stack-tags">
+          <span class="tag hi">Java</span>
+          <span class="tag hi">Spring Boot</span>
           <span class="tag hi">Node.js</span>
-          <span class="tag hi">Firebase</span>
+          <span class="tag hi">NestJS</span>
           <span class="tag hi">Django</span>
+          <span class="tag hi">Firebase</span>
+          <span class="tag hi">PostgreSQL</span>
+          <span class="tag hi">SQL / Oracle</span>
         </div>
         <div class="stack-row-arrow">→</div>
       </div>
@@ -523,7 +639,17 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
         <div class="stack-tags">
           <span class="tag hi">Python</span>
           <span class="tag hi">Pandas</span>
+          <span class="tag hi">NumPy</span>
           <span class="tag hi">Scikit-learn</span>
+        </div>
+        <div class="stack-row-arrow">→</div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-row-cat">Cloud</div>
+        <div class="stack-tags">
+          <span class="tag hi">Google Cloud Platform</span>
+          <span class="tag hi">BigQuery</span>
+          <span class="tag hi">Cloud Storage</span>
         </div>
         <div class="stack-row-arrow">→</div>
       </div>
@@ -531,9 +657,11 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
         <div class="stack-row-cat">Herramientas</div>
         <div class="stack-tags">
           <span class="tag">Power BI</span>
-          <span class="tag">Git</span>
+          <span class="tag">Excel Avanzado</span>
+          <span class="tag">Git / GitHub</span>
+          <span class="tag">Docker</span>
           <span class="tag">CRISP-DM</span>
-          <span class="tag">Jupyter</span>
+          <span class="tag">Scrum</span>
         </div>
         <div class="stack-row-arrow">→</div>
       </div>
@@ -544,7 +672,7 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
 <!-- ─── CONTACTO ─── -->
 <section class="panel" id="contacto">
   <div class="panel-inner" style="position:relative">
-    <div class="sobre-num" aria-hidden="true" style="opacity:.05">03</div>
+    <div class="sobre-num" aria-hidden="true" style="opacity:.05">04</div>
     <div class="contact-layout">
       <div>
         <div class="sobre-eyebrow">Contacto</div>
@@ -559,23 +687,22 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
             </div>
             <div class="clink-meta">
               <div class="clink-lbl">WhatsApp</div>
-            <div class="clink-val">Contactame</div>
-              
+              <div class="clink-val">Contactame</div>
             </div>
             <div class="clink-arrow">→</div>
           </a>
-          <!-- CV como PDF adjunto por WhatsApp -->
-          <a href="https://wa.me/56951524830?text=Hola%20Matias,%20me%20interesa%20tu%20perfil.%20%C2%BFPodr%C3%ADas%20enviarme%20tu%20CV?" target="_blank" class="clink">
+          <!-- CV en PDF -->
+          <a href="CV_Matias_Moya.pdf" target="_blank" class="clink">
             <div class="clink-icon">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
             </div>
             <div class="clink-meta">
               <div class="clink-lbl">Curriculum Vitae</div>
-              <div class="clink-val">CV</div>
+              <div class="clink-val">Ver / Descargar CV</div>
             </div>
             <div class="clink-arrow">→</div>
           </a>
-          <a href="https://github.com/twistyasap" target="_blank" class="clink">
+          <a href="https://www.linkedin.com/in/matias-moya-vargas-b2525726a/" target="_blank" class="clink">
             <div class="clink-icon">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             </div>
@@ -585,7 +712,7 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
             </div>
             <div class="clink-arrow">→</div>
           </a>
-          <a href="" target="_blank" class="clink">
+          <a href="https://github.com/twistyasap" target="_blank" class="clink">
             <div class="clink-icon">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.253-.447-1.27.098-2.646 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.376.202 2.393.1 2.646.64.698 1.028 1.591 1.028 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
             </div>
@@ -630,7 +757,7 @@ footer strong{color:var(--y);font-family:'Bebas Neue',sans-serif;font-size:15px;
 
 <footer>
   <strong>MATIAS MOYA</strong>
-  <span>© <span id="yr"></span> · Santiago, Chile · AIEP</span>
+  <span>© <span id="yr"></span> · Santiago, Chile · DUOC UC</span>
 </footer>
 
 <button id="up" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
@@ -684,7 +811,9 @@ function rev(sel, opts={}){
 rev('.sobre-eyebrow,.sobre-title',{y:40,stag:0.1});
 rev('.sobre-body p',{stag:0.1});
 rev('.feat',{x:-20,y:0,stag:0.1});
-rev('.stack-eyebrow,.stack-headline',{y:40,stag:0.1});
+rev('#proyectos .stack-eyebrow,#proyectos .stack-headline',{y:40,stag:0.1});
+rev('.proy-card',{y:24,stag:0.1});
+rev('#stack .stack-eyebrow,#stack .stack-headline',{y:40,stag:0.1});
 rev('.stack-row',{x:-16,y:0,stag:0.08});
 rev('.sobre-eyebrow+*,.contact-headline,.contact-sub',{y:40,stag:0.1});
 rev('.clink',{x:-16,y:0,stag:0.09});
